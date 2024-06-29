@@ -54,3 +54,11 @@ td:last-child {
 .form-min-size {
     min-width: 200px;
 }
+
+.notification {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 200px;
+    border: 3px solid #73AD21;
+}

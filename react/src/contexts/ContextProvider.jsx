@@ -1,8 +1,8 @@
 import {createContext, useContext, useState} from "react";
 
 const StateContext = createContext({
-    notification: '',
-    setNotification: () => {},
+    notification: null,
+    setNotification: undefined
 })
 
 export const ContextProvider = ({children}) => {
@@ -11,7 +11,6 @@ export const ContextProvider = ({children}) => {
 
     const setNotification = (message) => {
         _setNotification(message);
-        console.log("Notification set: " + message);
         setTimeout(() => {
             _setNotification('');
         }, 5000);
@@ -27,4 +26,12 @@ export const ContextProvider = ({children}) => {
     );
 }
 
-export const useStateContext = () => useContext(StateContext);
+export const useStateContext = () => {
+    const context = useContext(StateContext);
+
+    if (context === undefined) {
+        throw new Error('`useStateContext` must be used within a `ContextProvider`');
+    }
+
+    return context;
+};

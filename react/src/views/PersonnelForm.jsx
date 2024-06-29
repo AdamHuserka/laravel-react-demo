@@ -1,4 +1,4 @@
-import {Link, Navigate, useNavigate, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import {useStateContext} from "../contexts/ContextProvider.jsx";
 import {useEffect, useState} from "react";
 import axiosClient from "../axios-client.js";
@@ -6,7 +6,7 @@ import axiosClient from "../axios-client.js";
 export default function PersonnelForm() {
 
     const {id} = useParams();
-    const { setNotification } = useStateContext();
+    const { notification , setNotification } = useStateContext();
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState(null);
@@ -63,7 +63,6 @@ export default function PersonnelForm() {
             axiosClient.post(`/personnel`, person)
                 .then((response) => {
                     setNotification(personCreateMessageString);
-                    debugger;
                     navigate('/personnel');
                 })
                 .catch((error) => {

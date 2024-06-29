@@ -52,7 +52,6 @@ export default function Personnel() {
         }
         axiosClient.get(`/personnel/search?${filter}=${search}`)
             .then(({data}) => {
-                console.log(data);
                 setPersonnel(data.data);
             })
             .catch((error) => {
@@ -110,7 +109,7 @@ export default function Personnel() {
             </div>
             <div>
                 <table className="table table-striped table-bordered text-center">
-                    <thead>
+                    <thead className="table-light">
                     <tr className="personnel-table-row">
                         <th scope="col">Id</th>
                         <th scope="col">Name</th>
