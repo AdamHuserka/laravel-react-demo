@@ -1,0 +1,56 @@
+#root {
+    width: 100%;
+    margin: auto;
+}
+
+#personnel-searchbar {
+    width: 300px;
+}
+
+#form-header {
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.link {
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-wrap: nowrap;
+}
+
+.spread {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+td:first-child {
+    text-align: left;
+}
+
+th:last-child,
+td:last-child {
+    width: 50px;
+}
+
+.table {
+    width: 75%;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.centering {
+    margin: auto;
+    text-align: center;
+}
+
+.form-check {
+    display: inline-block;
+}
+
+.form-min-size {
+    min-width: 200px;
+}
